@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APIProgram</name>
+    </assembly>
+    <members>
+        <member name="M:APIProgram.Controllers.CustomerController.Get(System.String)">
+            <summary>
+            查詢會員
+            </summary>
+            <param name="cardNo">會員卡號</param>
+            <returns></returns>
+        </member>
+        <member name="M:APIProgram.Controllers.CustomerController.Insert(APIProgram.Model.Customer)">
+            <summary>
+            新增會員
+            </summary>
+            <param name="parameter">會員參數</param>
+            <returns></returns>
+        </member>
+        <member name="M:APIProgram.Controllers.CustomerController.Update(System.String,APIProgram.Model.Customer)">
+            <summary>
+            更新會員
+            </summary>
+            <param name="cardNo">會員編號</param>
+            <param name="parameter">會員參數</param>
+            <returns></returns>
+        </member>
+        <member name="P:APIProgram.Model.Customer.id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:APIProgram.Model.Customer.cardNo">
+            <summary>
+            會員卡號
+            </summary>
+        </member>
+        <member name="P:APIProgram.Model.Customer.CustomerName">
+            <summary>
+            會員名稱
+            </summary>
+        </member>
+        <member name="P:APIProgram.Model.Customer.phone">
+            <summary>
+            行動電話
+            </summary>
+        </member>
+        <member name="P:APIProgram.Model.Customer.birthdate">
+            <summary>
+            會員生日
+            </summary>
+        </member>
+        <member name="F:APIProgram.Model.SQL.CustomerSQL._connectString">
+            <summary>
+            連線字串
+            </summary>
+        </member>
+        <member name="M:APIProgram.Model.SQL.CustomerSQL.GetCustomer(System.String)">
+            <summary>
+            查詢會員
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:APIProgram.Model.SQL.CustomerSQL.Create(APIProgram.Model.Customer)">
+            <summary>
+            新增會員
+            </summary>
+            <param name="parameter">參數</param>
+            <returns></returns>
+        </member>
+        <member name="M:APIProgram.Model.SQL.CustomerSQL.Update(System.String,APIProgram.Model.Customer)">
+            <summary>
+            修改會員
+            </summary>
+            <param name="id">id</param>
+            <param name="item">Customer</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

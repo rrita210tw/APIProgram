@@ -31,4 +31,5 @@ namespace APIProgram.Model
         public string birthdate { get; set; }
 
     }
+
 }
