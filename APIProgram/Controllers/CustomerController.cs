@@ -14,7 +14,6 @@ namespace APIProgram.Controllers
     [Route("controller")]
     public class CustomerController : ControllerBase
     {
-
         private readonly CustomerSQL _CustomerSQL;
         public CustomerController()
         {
@@ -45,7 +44,7 @@ namespace APIProgram.Controllers
         /// <summary>
         /// 新增會員
         /// </summary>
-        /// <param name="parameter">會員參數</param>
+        /// <param name="CustomerItem">會員參數</param>
         /// <returns></returns>
         [HttpPost]
         public IActionResult Insert([FromBody] Customer CustomerItem)
@@ -63,7 +62,7 @@ namespace APIProgram.Controllers
         /// 更新會員
         /// </summary>
         /// <param name="cardNo">會員編號</param>
-        /// <param name="parameter">會員參數</param>
+        /// <param name="CustomerItem">會員參數</param>
         /// <returns></returns>
         [HttpPut]
         [Route("{cardNo}")]

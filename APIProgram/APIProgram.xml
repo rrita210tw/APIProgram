@@ -15,7 +15,7 @@
             <summary>
             新增會員
             </summary>
-            <param name="parameter">會員參數</param>
+            <param name="CustomerItem">會員參數</param>
             <returns></returns>
         </member>
         <member name="M:APIProgram.Controllers.CustomerController.Update(System.String,APIProgram.Model.Customer)">
@@ -23,8 +23,48 @@
             更新會員
             </summary>
             <param name="cardNo">會員編號</param>
-            <param name="parameter">會員參數</param>
+            <param name="CustomerItem">會員參數</param>
             <returns></returns>
+        </member>
+        <member name="P:APIProgram.Model.AutoNumber.AutoNumberCode">
+            <summary>
+            自動編號代碼
+            </summary>
+        </member>
+        <member name="P:APIProgram.Model.AutoNumber.AutoNumberName">
+            <summary>
+            自動編號名稱
+            </summary>
+        </member>
+        <member name="P:APIProgram.Model.AutoNumber.Prefix">
+            <summary>
+            前導字串
+            </summary>
+        </member>
+        <member name="P:APIProgram.Model.AutoNumber.CodingLength">
+            <summary>
+            編碼長度
+            </summary>
+        </member>
+        <member name="P:APIProgram.Model.AutoNumber.FirstNumber">
+            <summary>
+            起始編號
+            </summary>
+        </member>
+        <member name="P:APIProgram.Model.AutoNumber.AvailableNumber">
+            <summary>
+            可用編號
+            </summary>
+        </member>
+        <member name="P:APIProgram.Model.AutoNumber.Description">
+            <summary>
+            說明
+            </summary>
+        </member>
+        <member name="P:APIProgram.Model.AutoNumber.WorkingHeading">
+            <summary>
+            使月中前導字串
+            </summary>
         </member>
         <member name="P:APIProgram.Model.Customer.id">
             <summary>
@@ -49,6 +89,11 @@
         <member name="P:APIProgram.Model.Customer.birthdate">
             <summary>
             會員生日
+            </summary>
+        </member>
+        <member name="F:APIProgram.Model.SQL.AutoNumberSQL._connectString">
+            <summary>
+            連線字串
             </summary>
         </member>
         <member name="F:APIProgram.Model.SQL.CustomerSQL._connectString">

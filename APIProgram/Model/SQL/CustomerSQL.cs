@@ -45,6 +45,8 @@ namespace APIProgram.Model.SQL
         /// <returns></returns>
         public int Create(Customer item)
         {
+            item.cardNo = GetCardNo();
+
             var sql =
             @"
                 INSERT INTO Customer 
@@ -101,5 +103,11 @@ namespace APIProgram.Model.SQL
                 return result > 0;
             }
         }
+
+        public string GetCardNo()
+        {
+            return new AutoNumberSQL().GetNumber("CardNo");
+        }
+
     }
 }
