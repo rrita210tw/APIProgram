@@ -84,9 +84,9 @@ namespace APIProgram.Controllers
         /// </summary>
         /// <param name="cardNo">會員編號</param>
         /// <returns></returns>
-        [HttpPut]
+        [HttpDelete]
         [Route("{cardNo}")]
-        public IActionResult Update(
+        public IActionResult Delete(
             [FromRoute] string cardNo)
         {
             int id = this._CustomerSQL.GetCustomer(cardNo)?.id ?? 0;

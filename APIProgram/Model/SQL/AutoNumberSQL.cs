@@ -5,15 +5,12 @@ using System.Threading.Tasks;
 using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace APIProgram.Model.SQL
 {
-    public class AutoNumberSQL
+    public class AutoNumberSQL : AppConfigurationService
     {
-        /// <summary>
-        /// 連線字串
-        /// </summary>
-        private readonly string _connectString = @"Server=LAPTOP-VHAM6CF5\SQLEXPRESS;Database=Project;Trusted_Connection=True;";
 
         public string GetNumber(string AutoNumberCode)
         {

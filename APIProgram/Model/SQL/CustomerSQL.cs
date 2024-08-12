@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace APIProgram.Model.SQL
 {
-    public class CustomerSQL
+    public class CustomerSQL : AppConfigurationService
     {
-        /// <summary>
-        /// 連線字串
-        /// </summary>
-        private readonly string _connectString = @"Server=LAPTOP-VHAM6CF5\SQLEXPRESS;Database=Project;Trusted_Connection=True;";
 
         /// <summary>
         /// 查詢會員
