@@ -17,7 +17,7 @@ namespace APIProgram.Model.SQL
 
         public string GetNumber(string AutoNumberCode)
         {
-            var sql =
+            string sql =
             @"
                 Select RIGHT(REPLICATE('0', [CodingLength]) + CAST([AvailableNumber] as NVARCHAR), [CodingLength]) as CardNo From  [AutoNumber] 
                 where [AutoNumberCode] = @AutoNumberCode ;
@@ -26,7 +26,7 @@ namespace APIProgram.Model.SQL
                 where [AutoNumberCode] = @AutoNumberCode ;
             ";
 
-            var parameters = new DynamicParameters();
+            DynamicParameters parameters = new DynamicParameters();
             parameters.Add("AutoNumberCode", AutoNumberCode);
 
 

@@ -20,14 +20,14 @@ namespace APIProgram.Model.SQL
         /// <returns></returns>
         public Customer GetCustomer(string cardNo)
         {
-            var sql =
+            string sql =
             @"
                 SELECT * 
                 FROM Customer 
                 Where cardNo = @cardNo
             ";
 
-            var parameters = new DynamicParameters();
+            DynamicParameters parameters = new DynamicParameters();
             parameters.Add("cardNo", cardNo);
 
             using (var conn = new SqlConnection(_connectString))
@@ -41,13 +41,13 @@ namespace APIProgram.Model.SQL
         /// <summary>
         /// 新增會員
         /// </summary>
-        /// <param name="parameter">參數</param>
+        /// <param name="item">參數</param>
         /// <returns></returns>
         public int Create(Customer item)
         {
             item.cardNo = GetCardNo();
 
-            var sql =
+            string sql =
             @"
                 INSERT INTO Customer 
                 (
@@ -77,12 +77,12 @@ namespace APIProgram.Model.SQL
         /// <summary>
         /// 修改會員
         /// </summary>
-        /// <param name="id">id</param>
+        /// <param name="cardNo">cardNo</param>
         /// <param name="item">Customer</param>
         /// <returns></returns>
         public bool Update(string cardNo, Customer item)
         {
-            var sql =
+            string sql =
             @"
                 UPDATE Customer
                 SET 
@@ -94,7 +94,7 @@ namespace APIProgram.Model.SQL
                     cardNo = @cardNo
             ";
 
-            var parameters = new DynamicParameters(item);
+            DynamicParameters parameters = new DynamicParameters(item);
             parameters.Add("cardNo", cardNo, System.Data.DbType.Int64);
 
             using (var conn = new SqlConnection(_connectString))
@@ -104,6 +104,33 @@ namespace APIProgram.Model.SQL
             }
         }
 
+        /// <summary>
+        /// 刪除會員
+        /// </summary>
+        /// <param name="id">id</param>
+        /// <returns></returns>
+
+        public bool deleteCustomer(int id)
+        {
+            string sql =
+            @"
+                delete Customer 
+                Where id = @id
+            ";
+
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("id", id);
+
+            using (var conn = new SqlConnection(_connectString))
+            {
+                var result = conn.Execute(sql, parameters);
+                return result > 0;
+            }
+        }
+
+        /// <summary>
+        /// 取得目前可用卡號
+        /// </summary>
         public string GetCardNo()
         {
             return new AutoNumberSQL().GetNumber("CardNo");

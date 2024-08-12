@@ -79,6 +79,33 @@ namespace APIProgram.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// 刪除會員
+        /// </summary>
+        /// <param name="cardNo">會員編號</param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("{cardNo}")]
+        public IActionResult Update(
+            [FromRoute] string cardNo)
+        {
+            int id = this._CustomerSQL.GetCustomer(cardNo)?.id ?? 0;
+            if (id == 0)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            else
+            {
+                if (this._CustomerSQL.deleteCustomer(id) == false)
+                {
+                    Response.StatusCode = 404;
+                    return null;
+                }
+                else
+                    return Ok();
+            }
+        }
 
     }
 

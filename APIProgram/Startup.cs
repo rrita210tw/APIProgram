@@ -45,8 +45,8 @@ namespace APIProgram
                     }
                 });
 
-              //讀取 XML 檔案產生 API 說明
-               var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                //讀取 XML 檔案產生 API 說明
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 options.IncludeXmlComments(xmlPath);
 
@@ -104,5 +104,6 @@ namespace APIProgram
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
             });
         }
+
     }
 }
